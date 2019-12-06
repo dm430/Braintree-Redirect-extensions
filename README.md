@@ -10,12 +10,12 @@ var braintreeGateway = new BraintreeGateway("sandbox", "MerchatId here", "Public
 var fallback = new PaymentFallback ("Some user controlled url here", "Return to checkout")
 
 var localPayment = new LocalPayment(
-    PaymentType = "ideal",
-    Amount = 16.00m,
-    "EUR",
-    "NL",
-    fallback,
-    "Some user controlled url here"
+    paymentType: "ideal",
+    amount: 16.00m,
+    currencyCode: "EUR",
+    countryCode: "NL",
+    fallback: fallback,
+    cancelUrl: "Some user controlled url here"
 );
 
 var payment = braintreeGateway.ClientToken.CreateLocalPayment("Some account id here", localPayment);
