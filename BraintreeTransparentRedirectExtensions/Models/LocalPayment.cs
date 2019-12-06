@@ -4,6 +4,9 @@ namespace BraintreeTransparentRedirectExtensions.Models
 {
     public class LocalPayment
     {
+        public LocalPayment(string paymentType, decimal amount, string currencyCode, string countryCode, PaymentFallback fallback, string cancelUrl) 
+            : this(paymentType, amount, currencyCode, countryCode, fallback, new Uri(cancelUrl)) { }
+
         public LocalPayment(string paymentType, decimal amount, string currencyCode, string countryCode, PaymentFallback fallback, Uri cancelUrl)
         {
             if (string.IsNullOrWhiteSpace(paymentType))
