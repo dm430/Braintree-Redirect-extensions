@@ -1,8 +1,16 @@
-﻿namespace BraintreeTransparentRedirectExtensions.Models
+﻿using System;
+
+namespace BraintreeTransparentRedirectExtensions.Models
 {
     public class PaymentFallback
     {
-        public string Url { get; set; }
-        public string ButtonText { get; set; }
+        public PaymentFallback(Uri url, string buttonText = null)
+        {
+            Url = url ?? throw new ArgumentNullException(nameof(url), "The fallback url cannot be null.");
+            ButtonText = buttonText;
+        }
+
+        public Uri Url { get; protected set; }
+        public string ButtonText { get; protected set; }
     }
 }

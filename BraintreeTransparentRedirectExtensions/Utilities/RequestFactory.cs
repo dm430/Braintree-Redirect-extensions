@@ -17,7 +17,7 @@ namespace BraintreeTransparentRedirectExtensions.Utilities
                 Intent = GatewayConstants.Intent,
                 Amount = localPayment.Amount,
                 ReturnUrl = returnUrl,
-                CancelUrl = localPayment.Fallback.Url,
+                CancelUrl = localPayment.Fallback.Url.ToString(),
                 CurrencyCode = localPayment.CurrencyCode,
                 CountryCode = localPayment.CountryCode,
                 BraintreeLibraryVersion = $"braintree/web/{GatewayConstants.ApiVersion}", // Are custom strings ok here?
@@ -39,7 +39,7 @@ namespace BraintreeTransparentRedirectExtensions.Utilities
 
         private static string GenerateReturnUrl(PaymentFallback fallback, BraintreeClientConfiguration clientConfiguration)
         {
-            var encodedReturnUrl = HttpUtility.UrlEncode(fallback.Url);
+            var encodedReturnUrl = HttpUtility.UrlEncode(fallback.Url.ToString());
             var encodedButtonText = Uri.EscapeDataString(fallback.ButtonText);
             var returnUrl = $"{clientConfiguration.AssetsUrl}/web/{GatewayConstants.ApiVersion}/html/local-payment-redirect-frame.min.html?r={encodedReturnUrl}&t={encodedButtonText}";
 
