@@ -1,11 +1,8 @@
-﻿using System;
-using System.Net.Http;
+﻿using System.Net.Http;
 using System.Threading.Tasks;
 using Braintree;
 using BraintreeTransparentRedirectExtensions.Models;
-using BraintreeTransparentRedirectExtensions.Requests;
-using BraintreeTransparentRedirectExtensions.Responses;
-using BraintreeTransparentRedirectExtensions.Utilities;
+using BraintreeTransparentRedirectExtensions.Services;
 
 namespace BraintreeTransparentRedirectExtensions
 {
@@ -15,21 +12,9 @@ namespace BraintreeTransparentRedirectExtensions
 
         public static async Task<PaymentResource> CreateLocalPaymentAsync(this IClientTokenGateway clientTokenGateway, string merchantAccountId, LocalPayment localPayment)
         {
-            if (string.IsNullOrWhiteSpace(merchantAccountId))
-            {
-                throw new ArgumentException("The merchant account id cannot be null or whitespace.", nameof(merchantAccountId));
-            }
+            var service = new BraintreeLocalPaymentService(clientTokenGateway, Client);
 
-            if (localPayment == null)
-            {
-                throw new ArgumentNullException(nameof(localPayment), "The local payment cannot be null.");
-            }
-
-            var clientConfiguration = await clientTokenGateway.GetClientConfigurationAsync(merchantAccountId);
-            var localPaymentRequest = RequestFactory.CreateLocalPaymentRequest(localPayment, clientConfiguration);
-            var response = await Client.PostAsync<PaymentResourceResponse, LocalPaymentRequest>($"{clientConfiguration.ClientApiUrl}/v1/local_payments/create", localPaymentRequest);
-
-            return response.PaymentResource;
+            return await service.CreateLocalPaymentAsync(merchantAccountId, localPayment);
         }
 
         public static PaymentResource CreateLocalPayment(this IClientTokenGateway clientTokenGateway, string merchantAccountId, LocalPayment localPayment)
