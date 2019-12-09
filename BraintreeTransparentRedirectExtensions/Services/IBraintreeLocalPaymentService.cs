@@ -6,5 +6,6 @@ namespace BraintreeTransparentRedirectExtensions.Services
     public interface IBraintreeLocalPaymentService
     {
         Task<PaymentResource> CreateLocalPaymentAsync(string merchantAccountId, LocalPayment localPayment);
+        PaymentResource CreateLocalPayment(string merchantAccountId, LocalPayment localPayment);
     }
 }
