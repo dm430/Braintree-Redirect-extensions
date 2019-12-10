@@ -17,12 +17,10 @@ steps:
   inputs: 
     command: 'restore'
     
-steps:
 - task: DotNetCoreCLI@2
   inputs: 
     command: 'build'
-
-steps:
+    
 - task: DotNetCoreCLI@2
   inputs: 
     command: 'pack'
