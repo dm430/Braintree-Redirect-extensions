@@ -7,7 +7,7 @@
     <Authors>Devin Wall (Dm430)</Authors>
     <Company />
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <PackageId>BraintreetRedirectExtensions</PackageId>
+    <PackageId>BraintreeRedirectExtensions</PackageId>
     <Product>BraintreeRedirectExtensions</Product>
     <AssemblyName>BraintreetRedirectExtensions</AssemblyName>
   </PropertyGroup>
