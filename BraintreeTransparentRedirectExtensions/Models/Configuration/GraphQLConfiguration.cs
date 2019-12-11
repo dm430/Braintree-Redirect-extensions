@@ -1,4 +1,4 @@
-﻿namespace BraintreetRedirectExtensions.Models.Configuration
+﻿namespace BraintreeRedirectExtensions.Models.Configuration
 {
     internal class GraphQLConfiguration
     {

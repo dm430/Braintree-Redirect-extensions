@@ -1,4 +1,4 @@
-﻿namespace BraintreetRedirectExtensions
+﻿namespace BraintreeRedirectExtensions
 {
     internal static class GatewayConstants
     {

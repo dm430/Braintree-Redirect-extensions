@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BraintreetRedirectExtensions.Models
+namespace BraintreeRedirectExtensions.Models
 {
     public class PaymentFallback
     {

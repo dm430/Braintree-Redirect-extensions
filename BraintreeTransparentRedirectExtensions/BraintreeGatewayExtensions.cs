@@ -1,11 +1,11 @@
 ﻿using System.Net.Http;
 using System.Threading.Tasks;
 using Braintree;
-using BraintreetRedirectExtensions.Http;
-using BraintreetRedirectExtensions.Models;
-using BraintreetRedirectExtensions.Services;
+using BraintreeRedirectExtensions.Http;
+using BraintreeRedirectExtensions.Models;
+using BraintreeRedirectExtensions.Services;
 
-namespace BraintreetRedirectExtensions
+namespace BraintreeRedirectExtensions
 {
     public static class BraintreeGatewayExtensions
     {

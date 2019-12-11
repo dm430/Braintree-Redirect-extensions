@@ -1,6 +1,6 @@
 ﻿using System.Net;
 
-namespace BraintreetRedirectExtensions
+namespace BraintreeRedirectExtensions
 {
     public interface IWebClient
     {

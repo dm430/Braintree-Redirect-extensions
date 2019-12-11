@@ -2,7 +2,7 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace BraintreetRedirectExtensions.Utilities
+namespace BraintreeRedirectExtensions.Utilities
 {
     internal static class HttpClientExtensions
     {

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace BraintreetRedirectExtensions.Models.Configuration
+namespace BraintreeRedirectExtensions.Models.Configuration
 {
     internal class BraintreeClientConfiguration
     {
