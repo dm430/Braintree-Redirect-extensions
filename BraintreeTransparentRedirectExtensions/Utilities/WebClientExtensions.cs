@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Net;
 
-namespace BraintreeTransparentRedirectExtensions.Utilities
+namespace BraintreetRedirectExtensions.Utilities
 {
     internal static class WebClientExtensions
     {

@@ -1,6 +1,6 @@
 ﻿using System.Net;
 
-namespace BraintreeTransparentRedirectExtensions.Http
+namespace BraintreetRedirectExtensions.Http
 {
     public class WebClientWrapper : IWebClient
     {

@@ -1,7 +1,7 @@
-﻿using BraintreeTransparentRedirectExtensions.Models;
+﻿using BraintreetRedirectExtensions.Models;
 using System.Threading.Tasks;
 
-namespace BraintreeTransparentRedirectExtensions.Services
+namespace BraintreetRedirectExtensions.Services
 {
     public interface IBraintreeLocalPaymentService
     {

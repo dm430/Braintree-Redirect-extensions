@@ -1,7 +1,7 @@
-﻿using BraintreeTransparentRedirectExtensions.Models;
+﻿using BraintreetRedirectExtensions.Models;
 using Newtonsoft.Json;
 
-namespace BraintreeTransparentRedirectExtensions.Responses
+namespace BraintreetRedirectExtensions.Responses
 {
     internal class PaymentResourceResponse
     {

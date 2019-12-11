@@ -1,4 +1,4 @@
-﻿namespace BraintreeTransparentRedirectExtensions.Models.Configuration
+﻿namespace BraintreetRedirectExtensions.Models.Configuration
 {
     internal class PaypalConfiguration
     {

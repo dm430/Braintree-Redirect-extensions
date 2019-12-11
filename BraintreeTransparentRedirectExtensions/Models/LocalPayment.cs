@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BraintreeTransparentRedirectExtensions.Models
+namespace BraintreetRedirectExtensions.Models
 {
     public class LocalPayment
     {

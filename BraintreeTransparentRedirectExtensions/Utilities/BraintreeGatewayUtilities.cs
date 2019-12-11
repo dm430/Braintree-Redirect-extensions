@@ -1,9 +1,9 @@
 ﻿using System.Threading.Tasks;
 using Braintree;
-using BraintreeTransparentRedirectExtensions.Models.Configuration;
+using BraintreetRedirectExtensions.Models.Configuration;
 using Newtonsoft.Json;
 
-namespace BraintreeTransparentRedirectExtensions.Utilities
+namespace BraintreetRedirectExtensions.Utilities
 {
     public static class BraintreeGatewayUtilities
     {

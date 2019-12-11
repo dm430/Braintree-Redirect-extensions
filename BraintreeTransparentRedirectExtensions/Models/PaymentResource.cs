@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace BraintreeTransparentRedirectExtensions.Models
+namespace BraintreetRedirectExtensions.Models
 {
     public class PaymentResource
     {

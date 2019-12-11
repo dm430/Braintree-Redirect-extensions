@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BraintreeTransparentRedirectExtensions.Requests
+namespace BraintreetRedirectExtensions.Requests
 {
     internal class MetaData
     {

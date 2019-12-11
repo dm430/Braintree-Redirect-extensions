@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace BraintreeTransparentRedirectExtensions.Utilities
+namespace BraintreetRedirectExtensions.Utilities
 {
     public static class EncodingUtilities
     {

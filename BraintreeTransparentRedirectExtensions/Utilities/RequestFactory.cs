@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Web;
-using BraintreeTransparentRedirectExtensions.Models;
-using BraintreeTransparentRedirectExtensions.Models.Configuration;
-using BraintreeTransparentRedirectExtensions.Requests;
+using BraintreetRedirectExtensions.Models;
+using BraintreetRedirectExtensions.Models.Configuration;
+using BraintreetRedirectExtensions.Requests;
 
-namespace BraintreeTransparentRedirectExtensions.Utilities
+namespace BraintreetRedirectExtensions.Utilities
 {
     internal class RequestFactory
     {

@@ -1,14 +1,14 @@
 ﻿using Braintree;
-using BraintreeTransparentRedirectExtensions.Models;
-using BraintreeTransparentRedirectExtensions.Requests;
-using BraintreeTransparentRedirectExtensions.Responses;
-using BraintreeTransparentRedirectExtensions.Utilities;
+using BraintreetRedirectExtensions.Models;
+using BraintreetRedirectExtensions.Requests;
+using BraintreetRedirectExtensions.Responses;
+using BraintreetRedirectExtensions.Utilities;
 using System;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace BraintreeTransparentRedirectExtensions.Services
+namespace BraintreetRedirectExtensions.Services
 {
     public class BraintreeLocalPaymentService : IBraintreeLocalPaymentService {
         private const string paymentCreateEnpoint = "/v1/local_payments/create";

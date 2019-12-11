@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace BraintreeTransparentRedirectExtensions.Requests
+namespace BraintreetRedirectExtensions.Requests
 {
     internal class LocalPaymentRequest
     {
