@@ -13,6 +13,10 @@ variables:
   BuildConfiguration: 'Release'
 
 steps:
+- task: GitVersion@5
+  inputs:
+    runtime: 'core'
+    
 - task: DotNetCoreCLI@2
   displayName: 'Nuget Restore'
   inputs: 
