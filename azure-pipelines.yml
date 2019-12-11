@@ -29,6 +29,7 @@ steps:
     arguments: '--configuration $(BuildConfiguration) /p:Version=$(GitVersion.NuGetVersion)'
 
 - task: DotNetCoreCLI@2
+  displayName: 'Nuget pack'
   inputs:
     command: 'pack'
     packagesToPack: '**/*.csproj'
@@ -37,6 +38,7 @@ steps:
     versionEnvVar: 'GitVersion.NuGetVersion'
     
 - task: DotNetCoreCLI@2
+  displayName: 'Nuget push'
   inputs:
     command: 'push'
     packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
