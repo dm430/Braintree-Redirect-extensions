@@ -44,4 +44,4 @@ steps:
     packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
     nuGetFeedType: 'internal'
     publishVstsFeed: 'c2e0467b-2b81-4f61-ba30-2a195a26f9b8/9aed2e3b-6ba8-4b6c-a48a-7dcf2565d087'
-  condition: and(succeeded(), or(eq(variables['Build.SourceBranch'], 'refs/heads/master'), eq('true', variables['Nuget.ForcePush']))
+  condition: and(succeeded(), or(eq(variables['Build.SourceBranch'], 'refs/heads/master'), eq('true', variables['Nuget.ForcePush'])))
