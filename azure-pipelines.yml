@@ -22,7 +22,7 @@ steps:
   displayName: 'Build'
   inputs: 
     command: 'build'
-    arguments: '-o --configuration $(BuildConfiguration) /p:Version=$(GitVersion.NuGetVersion)'
+    arguments: '--configuration $(BuildConfiguration) /p:Version=$(GitVersion.NuGetVersion)'
 
 - task: DotNetCoreCLI@2
   inputs:
