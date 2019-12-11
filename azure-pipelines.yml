@@ -16,6 +16,7 @@ steps:
 - task: GitVersion@5
   inputs:
     runtime: 'core'
+    preferBundledVersion: false
     
 - task: DotNetCoreCLI@2
   displayName: 'Nuget Restore'
