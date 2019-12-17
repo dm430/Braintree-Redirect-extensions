@@ -5,7 +5,7 @@ namespace BraintreeRedirectExtensions.Utilities
 {
     internal static class WebClientExtensions
     {
-        public static TResponse Post<TResponse, TRequest>(this WebClient webClient, string endpoint, TRequest request)
+        public static TResponse Post<TResponse, TRequest>(this IWebClient webClient, string endpoint, TRequest request)
         {
             webClient.Headers[HttpRequestHeader.ContentType] = "application/json";
 

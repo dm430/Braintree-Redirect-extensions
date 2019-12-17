@@ -14,5 +14,6 @@ namespace BraintreeRedirectExtensions.Models
 
         public Uri Url { get; protected set; }
         public string ButtonText { get; protected set; }
+        public bool HasRedirectButton => !string.IsNullOrWhiteSpace(ButtonText);
     }
 }

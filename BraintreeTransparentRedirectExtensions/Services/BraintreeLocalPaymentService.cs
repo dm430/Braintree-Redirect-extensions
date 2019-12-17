@@ -15,11 +15,13 @@ namespace BraintreeRedirectExtensions.Services
 
         private readonly IClientTokenGateway clientTokenGateway;
         private readonly HttpClient httpClient;
+        private readonly IWebClient webClient;
 
         public BraintreeLocalPaymentService(IClientTokenGateway clientTokenGateway, HttpClient httpClient, IWebClient webClient)
         {
             this.clientTokenGateway = clientTokenGateway;
             this.httpClient = httpClient;
+            this.webClient = webClient;
         }
 
         public async Task<PaymentResource> CreateLocalPaymentAsync(string merchantAccountId, LocalPayment localPayment)
@@ -42,7 +44,6 @@ namespace BraintreeRedirectExtensions.Services
             var clientConfiguration = clientTokenGateway.GetClientConfiguration(merchantAccountId);
             var localPaymentRequest = RequestFactory.CreateLocalPaymentRequest(localPayment, clientConfiguration);
 
-            var webClient = new WebClient();
             var response = webClient.Post<PaymentResourceResponse, LocalPaymentRequest>($"{clientConfiguration.ClientApiUrl}{paymentCreateEnpoint}", localPaymentRequest);
 
             return response.PaymentResource;

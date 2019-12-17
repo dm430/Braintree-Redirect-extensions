@@ -39,9 +39,15 @@ namespace BraintreeRedirectExtensions.Utilities
 
         private static string GenerateReturnUrl(PaymentFallback fallback, BraintreeClientConfiguration clientConfiguration)
         {
-            var encodedReturnUrl = HttpUtility.UrlEncode(fallback.Url.ToString());
-            var encodedButtonText = Uri.EscapeDataString(fallback.ButtonText);
-            var returnUrl = $"{clientConfiguration.AssetsUrl}/web/{GatewayConstants.ApiVersion}/html/local-payment-redirect-frame.min.html?r={encodedReturnUrl}&t={encodedButtonText}";
+            var returnUrl = fallback.Url.ToString();
+
+            if (fallback.HasRedirectButton)
+            {
+                var encodedReturnUrl = HttpUtility.UrlEncode(returnUrl);
+                var encodedButtonText = Uri.EscapeDataString(fallback.ButtonText);
+
+                returnUrl = $"{clientConfiguration.AssetsUrl}/web/{GatewayConstants.ApiVersion}/html/local-payment-redirect-frame.min.html?r={encodedReturnUrl}&t={encodedButtonText}";
+            }
 
             return returnUrl;
         }
