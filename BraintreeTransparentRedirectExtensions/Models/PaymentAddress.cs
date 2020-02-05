@@ -21,7 +21,6 @@ namespace BraintreeRedirectExtensions.Models
 
         public string AddressLine1 { get; set; }
         public string AddressLine2 { get; set; }
-        public string AdressLine2 { get; set; }
         public string Locality { get; set; }
         public string Region { get; set; }
         public string PostalCode { get; set; }

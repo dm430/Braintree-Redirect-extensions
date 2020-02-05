@@ -22,11 +22,11 @@ namespace BraintreeRedirectExtensions
         /// <param name="merchantAccountId">The merchant account to use for the paymnt.</param>
         /// <param name="localPayment">Descriptor of the payment to be created on the brain tree server.</param>
         /// <returns>A payment resource that describes the newly created payment.</returns>
-        public static async Task<PaymentResource> CreateLocalPaymentAsync(this IClientTokenGateway clientTokenGateway, string merchantAccountId, LocalPayment localPayment)
+        public static Task<PaymentResource> CreateLocalPaymentAsync(this IClientTokenGateway clientTokenGateway, string merchantAccountId, LocalPayment localPayment)
         {
             var service = new BraintreeLocalPaymentService(clientTokenGateway, httpClient, webClient);
 
-            return await service.CreateLocalPaymentAsync(merchantAccountId, localPayment);
+            return service.CreateLocalPaymentAsync(merchantAccountId, localPayment);
         }
 
         /// <summary>
