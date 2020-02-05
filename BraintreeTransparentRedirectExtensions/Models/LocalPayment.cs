@@ -4,10 +4,10 @@ namespace BraintreeRedirectExtensions.Models
 {
     public class LocalPayment
     {
-        public LocalPayment(string paymentType, decimal amount, string currencyCode, string countryCode, PaymentFallback fallback, string cancelUrl) 
-            : this(paymentType, amount, currencyCode, countryCode, fallback, new Uri(cancelUrl)) { }
+        public LocalPayment(string paymentType, decimal amount, string currencyCode, PaymentAddress address, PaymentFallback fallback, string cancelUrl, PaymentCustomer customer = null, bool addressEntryRequired = false) 
+            : this(paymentType, amount, currencyCode, address, fallback, new Uri(cancelUrl), customer, addressEntryRequired) { }
 
-        public LocalPayment(string paymentType, decimal amount, string currencyCode, string countryCode, PaymentFallback fallback, Uri cancelUrl)
+        public LocalPayment(string paymentType, decimal amount, string currencyCode, PaymentAddress address, PaymentFallback fallback, Uri cancelUrl, PaymentCustomer customer = null, bool addressEntryRequired = false)
         {
             if (string.IsNullOrWhiteSpace(paymentType))
             {
@@ -23,18 +23,15 @@ namespace BraintreeRedirectExtensions.Models
             {
                 throw new ArgumentException("The payment currency code be null or whitespace.", nameof(currencyCode));
             }
-            
-            if (string.IsNullOrWhiteSpace(countryCode))
-            {
-                throw new ArgumentException("The payment country code be null or whitespace.", nameof(countryCode));
-            }
 
             PaymentType = paymentType;
             Amount = amount;
             CurrencyCode = currencyCode;
-            CountryCode = countryCode;
+            Address = address ?? throw new ArgumentNullException(nameof(address), "The address cannot be null.");
             Fallback = fallback ?? throw new ArgumentNullException(nameof(fallback), "The fallback cannot be null.");
             CancelUrl = cancelUrl ?? throw new ArgumentNullException(nameof(CancelUrl), "The cancel url cannot be null.");
+            Customer = customer;
+            AddressEntryRequired = addressEntryRequired;
         }
 
         public string PaymentType { get; protected set; }
@@ -42,6 +39,8 @@ namespace BraintreeRedirectExtensions.Models
         public PaymentFallback Fallback { get; protected set; }
         public Uri CancelUrl { get; protected set; }
         public string CurrencyCode { get; protected set; }
-        public string CountryCode { get; protected set; }
+        public PaymentAddress Address { get; protected set; }
+        public PaymentCustomer Customer { get; set; }
+        public bool AddressEntryRequired { get; set; }
     }
 }

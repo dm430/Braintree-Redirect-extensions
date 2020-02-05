@@ -19,12 +19,25 @@ namespace BraintreeRedirectExtensions.Utilities
                 ReturnUrl = returnUrl,
                 CancelUrl = localPayment.Fallback.Url.ToString(),
                 CurrencyCode = localPayment.CurrencyCode,
-                CountryCode = localPayment.CountryCode,
+                CountryCode = localPayment.Address.CountryCode,
+                ExperienceProfile = new ExperienceProfileRequest
+                {
+                    NoShipping = !localPayment.AddressEntryRequired
+                },
+                AddressLine1 = localPayment.Address.AddressLine1,
+                AddressLine2 = localPayment.Address.AddressLine2,
+                Locality = localPayment.Address.Locality,
+                Region = localPayment.Address.Region,
+                PostalCode = localPayment.Address.PostalCode,
+                FirstName = localPayment.Customer?.FirstName,
+                LastName = localPayment.Customer?.LastName,
+                Email = localPayment.Customer?.Email,
+                Phone = localPayment.Customer?.Phone,
                 BraintreeLibraryVersion = $"braintree/web/{GatewayConstants.ApiVersion}", // Are custom strings ok here?
                 MetaData = new MetaData()
                 {
                     MerchantAppId = "Test", // TODO: Make configurable.
-                    Platform = "web", // Should this be something else?S
+                    Platform = "web", // Should this be something else?
                     SdkVersion = GatewayConstants.ApiVersion,
                     Source = "client",
                     Integration = "custom",
